@@ -1,0 +1,42 @@
+{
+  "name": "@cupist/analytics-braze",
+  "version": "1.0.18",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "yarn build:tsc && yarn build:alias",
+    "build:tsc": "yarn tsc --outDir dist",
+    "build:alias": "tsc-alias -p tsconfig.json",
+    "prepublishOnly": "yarn prebuild && yarn build",
+    "submit": "yarn publish --registry=http://localhost:4873"
+  },
+  "dependencies": {
+    "@braze/react-native-sdk": "^11.0.0",
+    "@cupist/analytics-core": "https://github.com/Terry-cupist/pre-apply-analytics-core"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@tsconfig/react-native": "^3.0.3",
+    "@types/lodash-es": "4.17.12",
+    "@types/react": "^18.2.60",
+    "@types/react-native": "^0.73.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "tsc-alias": "^1.8.16",
+    "typescript": "^5.3.0"
+  },
+  "keywords": [],
+  "author": "cupist-terry",
+  "license": "ISC"
+}
